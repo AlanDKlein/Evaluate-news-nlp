@@ -1,6 +1,12 @@
+const dotenv = require("dotenv");
+dotenv.config();
+console.log(`API Key = ${process.env.API_KEY}`);
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
+const meaningCloudKey = new meaningCloudKey({
+    application_key=process.env.API_KEY
+});
 
 const app = express()
 

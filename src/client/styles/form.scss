@@ -1,12 +1,70 @@
 form {
     border: 1px solid #545454;
     border-radius: 3px;
-    padding: 40px;
+    padding: 20px;
 }
 
+#resultsSection {
+    background-color:  lightblue;
+    // text-align:  center;
+    // font-size: 2rem;
+    border:  1px solid black;
+}
+#title {
+    font-weight: bold;
+    text-align:  center;
+    font-size: 1.25rem;
+    margin-bottom:  0.5rem;
+}
 input {
     padding: 5px 20px;
     width: 100%;
     line-height: 16px;
     margin: 10px 0;
+    border: 2px solid blue;
+    background-color:  lightblue;
+}
+
+#input_text1, #results  {
+    font-weight: bold;
+    color:  black;
+    text-align: left;
+    padding-left: 1rem;
+    margin-bottom:  0.5rem;
+    margin-top:  0.25rem;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+   }
+cite {
+    font-style: italic;
+    color:  blue;
+}
+h3 {
+    font-weight: bold;
+    text-align: left;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+ 
+}
+
+.speeches {
+    border:  1px solid green;
+    padding:  0.125rem;
+    // margin: 0.5rem;
+    // width:  75%;
+    max-width: 950px;
+    margin: 25px auto;
+}
+#mySubmit {
+    font-weight: bold;
+    width:  7rem;
+    text-align:  center;
+    background-color: lightblue;
+}
+#mySubmit:hover {
+    color: lightblue;
+    background-color: black;
+    cursor: pointer;
+    border: 2px solid lightblue;
 }

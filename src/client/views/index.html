@@ -1,45 +1,67 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-        <link rel="stylesheet" href="/styles/resets.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/header.css">
-        <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css">
-       <!-- MeaningCloud URL:  "https://api.meaningcloud.com/sentiment-2.1?key=<<YOUR OWN KEY>>&of=json&txt=<<YOUR OWN TXT>>&model=<<MODEL>>&lang=en") -->
-            
-    </head>
 
-    <body>
+<head>
+    <meta charset="utf-8">
+    <title>Udacity Evaluate News NLP Project</title>
+</head>
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+<body>
 
-        <main>
+
+
+    <main>
+        <header>Udacity Natural Language Processor Project</header>
+        <p class='copyText'>Below is text from two famouse speeches which can be used to copy/paste into the input
+            section to have it analyzed.</p>
+        <p class='speeches'>However, I think we're going to do it, and I think that we must pay what needs to be paid. I
+            don't think we ought to waste any money, but I think we ought to do the job. And this will be done in the
+            decade of the Sixties. It may be done while some of you are still here at school at this college and
+            university. It will be done during the terms of office of some of the people who sit here on this platform.
+            But it will be done. And it will be done before the end of this decade.<br><br>
+            <cite>We Choose to go to the Moon</cite> by President John F. Kennedy - September 12, 1962</p>
+
+        <p class='speeches'>Four score and seven years ago our fathers brought forth on this continent, a new nation,
+            conceived in liberty, and dedicated to the proposition that all men are created equal. Now we are engaged in
+            a great civil war, testing whether that nation, or any nation so conceived and so dedicated, can long
+            endure. We are met on a great battlefield of that war. We have come to dedicate a portion of that field, as
+            a final resting place for those who here gave their lives that that nation might live. It is altogether
+            fitting and proper that we should do this.<br><br>
+            <cite>The Gettysburgh Address</cite> by President Abraham Lincoln - November 19, 1863
+        </p>
+
+        <section>
+            <form class="" onsubmit="return Client.handleSubmit(event)">
+                <p>Copy/paste text from above, or enter any freeform text, and click Submit to have the NLP website
+                    analyze and show the results</p>
+                <input id="name" type="text" name="input" value="Enter your text here!" placeholder="Name">
+                <input id='mySubmit' type="submit" name="" value="Submit" onclick="return Client.handleSubmit(event)"
+                    onsubmit="return Client.handleSubmit(event)">
+            </form>
             <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
-                </form>
-            <section>
 
-            <section>
-                <strong>My Form Results:</strong>
-                 <div id="results"></div>
-            </section>
-        </main>
+                <section id="resultsSection">
+                    <div id=title>MorningCloud NLP Results</div>
+                    <!-- <div id="myInput"></div>   -->
+                    <h3>Input Text:</h3>
+                    <p id="input_text1"></p>
+                    <h3>Results:</h3>
+                    <p id="results"></p>
+                </section>
+    </main>
 
-        <footer>
-            <p>This is a footer</p>
-        </footer>
+    <footer class="page__footer">
+        <p>&copy Udacity</p>
+    </footer>
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
+</body>
 
-    </body>
 </html>

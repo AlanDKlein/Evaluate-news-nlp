@@ -1,5 +1,14 @@
 header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 40px;
+    padding: 10px;
+    font-weight:  bold;
+    text-align: center;
+    font-size: 2.25rem;
+        
 }
+.copyText {
+    // padding: 0.5rem;
+    font-weight:  bold;
+    max-width: 800px;
+    margin: 25px auto;
+}
+

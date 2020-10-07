@@ -10,26 +10,26 @@ This objective of this project is to give students practice with webpack and oth
 - Using APIs and creating requests to external urls
 
 ## Tools and services used for the project:
-Webserver -- Node.js
-Web application framework -- Express
-Build Tool -- Webpack 
+- Webserver -- Node.js
+- Web application framework -- Express
+- Build Tool -- Webpack 
 
 ### Additional Weback Loaders & Plugins installed
---babel/core
---babel/preset-env
---babel-loader
---clean-webpack-plugin
---css-loader
---html-webpack-plugin
---jest
---mini-css-extract-plugin
---node-sass
---optimize-css-assets-webpack-plugin
---sass-loader
---style-loader
---terser-webpack-plugin
---webpack-dev-server
---workbox-webpack-plugin
+- babel/core
+- babel/preset-env
+- babel-loader
+- clean-webpack-plugin
+- css-loader
+- html-webpack-plugin
+- jest
+- mini-css-extract-plugin
+- node-sass
+- optimize-css-assets-webpack-plugin
+- sass-loader
+- style-loader
+- terser-webpack-plugin
+- webpack-dev-server
+- workbox-webpack-plugin
 
 ## The Web API
 For this project we are required to use the MeaningCloud website for the NPL processing.  MeaningCloud has several different APIs available.  I have chosen the Sentiment Analysis API, v2.1.

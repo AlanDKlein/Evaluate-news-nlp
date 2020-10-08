@@ -5,6 +5,7 @@ const express = require('express')
 const mockAPIResponse = require('../mockAPI.js')
 const cors = require('cors')
 var bodyParser = require('body-parser')
+const application_key = process.env.API_KEY
 
 
 const app = express()
@@ -31,7 +32,7 @@ app.listen(8081, function () {
 
 app.get('/test', function (req, res) {
 
-  res.send("test")
+  res.send({key:application_key})
   
 })
 

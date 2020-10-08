@@ -1,11 +1,38 @@
+import { checkForName } from "./nameChecker"
+import { isValidURL } from "./urlChecker"
+
 function handleSubmit(event) {
     event.preventDefault()
+   
+    const getAPIKey = async () => {
+        const request = await fetch('/test');
+        try {
+            const theData = await request.json();
+            console.log('data =', theData);
+        }
+        catch (error) {
+            console.log(error);
+        }
+    };
+    getAPIKey()
+
+//     const request = fetch('/test');
+//    console.log("Request =" , request);
+//    const theData = request.json;
+//    console.log("theData =" , theData);
+         
+           
 
     // check what text was put into the form field
     let formText = document.getElementById('name').value
-    if (formText === '' || formText === null) {
-        alert("You must either copy/paste text from above or enter your own.")
-    }
+    let URL = "https://api.meaningcloud.com/sentiment-2.1"
+    let myText = true;
+    let myURL = true;
+    myURL = isValidURL(URL);
+    myText = checkForName(formText);
+
+    if (myText === true && myURL === true) {
+
     fetch("https://api.meaningcloud.com/sentiment-2.1?key=22acb93f8ca87c9e5ad0a16893814c95&of=json&txt=" + formText + "&model=general&lang=en")
 
         .then(res => {
@@ -20,8 +47,8 @@ function handleSubmit(event) {
             let output = `The NLP analyzer was ${data.confidence}% confident that the above statement was of the type:  ${data.agreement} and ${data.irony}`
             document.getElementById('input_text1').innerHTML = myNewText
             document.getElementById('results').innerHTML = `${output}.`
-        })
-}
-
-export { handleSubmit }
+        });
+    }
+    }
+    export { handleSubmit }
 

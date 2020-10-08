@@ -1,17 +1,12 @@
-function checkForName(inputText) {
-    alert("in namechecker");
-    let names = [
-        "Picard",
-        "Janeway",
-        "Kirk",
-        "Archer",
-        "Georgiou",
-        "klein"
-    ]
-
-    if (names.includes(inputText)) {
-        alert("Welcome, Captain!")
+function checkForName(formText) {
+ 
+ if (formText === '' || formText === null) {
+        alert("You must either copy/paste text from above or enter your own.")
+        return false;
+    }
+    else {
+        return true;
     }
 }
-
+ 
 export { checkForName }

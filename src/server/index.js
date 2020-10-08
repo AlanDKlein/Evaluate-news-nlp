@@ -2,9 +2,10 @@ const dotenv = require("dotenv");
 dotenv.config();
 var path = require('path')
 const express = require('express')
-const mockAPIResponse = require('./mockAPI.js')
+const mockAPIResponse = require('../mockAPI.js')
 const cors = require('cors')
 var bodyParser = require('body-parser')
+
 
 const app = express()
 app.use(cors());
@@ -29,6 +30,8 @@ app.listen(8081, function () {
 })
 
 app.get('/test', function (req, res) {
-  res.send(mockAPIResponse)
+
+  res.send("test")
+  
 })
 

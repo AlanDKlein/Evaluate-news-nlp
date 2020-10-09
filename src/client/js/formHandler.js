@@ -10,8 +10,7 @@ function handleSubmit(event) {
     let myURL = false;
      
     function getAPIKey() {
-        console.log('in getapi key');
-        fetch('/test')
+         fetch('/test')
             .then(response => response.json())
             .then(data => {
                 apiKey = data.key

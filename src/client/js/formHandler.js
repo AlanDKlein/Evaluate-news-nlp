@@ -1,6 +1,6 @@
 import { checkForName } from "./nameChecker"
 import { isValidURL } from "./urlChecker"
-
+let apiKey = '';
 function handleSubmit(event) {
     event.preventDefault()
    
@@ -8,7 +8,8 @@ function handleSubmit(event) {
         const request = await fetch('/test');
         try {
             const theData = await request.json();
-            console.log('data =', theData);
+            apiKey = theData.key;
+            console.log(apiKey);
         }
         catch (error) {
             console.log(error);
@@ -16,23 +17,20 @@ function handleSubmit(event) {
     };
     getAPIKey()
 
-//     const request = fetch('/test');
-//    console.log("Request =" , request);
-//    const theData = request.json;
-//    console.log("theData =" , theData);
-         
-           
+   
+          
 
     // check what text was put into the form field
     let formText = document.getElementById('name').value
-    let URL = "https://api.meaningcloud.com/sentiment-2.1"
+    let URL = "https://api.meaningcloud.com/sentiment-2.1?"
     let myText = true;
     let myURL = true;
     myURL = isValidURL(URL);
     myText = checkForName(formText);
-
+    URL = `${URL}${apiKey}`
+    console.log("URL now =", URL)
     if (myText === true && myURL === true) {
-
+        
     fetch("https://api.meaningcloud.com/sentiment-2.1?key=22acb93f8ca87c9e5ad0a16893814c95&of=json&txt=" + formText + "&model=general&lang=en")
 
         .then(res => {

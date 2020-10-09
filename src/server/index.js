@@ -5,8 +5,8 @@ const express = require('express')
 const mockAPIResponse = require('../mockAPI.js')
 const cors = require('cors')
 var bodyParser = require('body-parser')
-const application_key = process.env.API_KEY
-
+let application_key = process.env.API_KEY
+console.log(`api key = ${application_key}`);
 
 const app = express()
 app.use(cors());
@@ -30,9 +30,12 @@ app.listen(8081, function () {
   console.log('Example app listening on port 8081!')
 })
 
+let apiKey = {}
 app.get('/test', function (req, res) {
+  apiKey.key = application_key
+  // console.log('key =', apiKey.key);
+  console.log('env key =', application_key);
+  res.send(apiKey);
 
-  res.send({key:application_key})
-  
 })
 

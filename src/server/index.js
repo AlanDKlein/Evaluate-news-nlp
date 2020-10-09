@@ -33,9 +33,6 @@ app.listen(8081, function () {
 let apiKey = {}
 app.get('/test', function (req, res) {
   apiKey.key = application_key
-  // console.log('key =', apiKey.key);
-  console.log('env key =', application_key);
   res.send(apiKey);
-
 })
 
